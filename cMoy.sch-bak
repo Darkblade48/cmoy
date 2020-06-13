@@ -84,6 +84,10 @@ F 3 "~" H 2650 4950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
+	2150 4450 2550 4450
+Wire Wire Line
+	2150 4950 2550 4950
+Wire Wire Line
 	4600 4550 5400 4550
 Wire Wire Line
 	5400 4550 5400 5100
@@ -288,13 +292,17 @@ Connection ~ 3650 2850
 Connection ~ 3650 1750
 Wire Wire Line
 	3650 1750 4250 1750
+Wire Wire Line
+	1950 3850 1950 4300
 Connection ~ 5400 6300
 Wire Wire Line
 	5950 5300 5950 5500
+Wire Wire Line
+	1950 4600 1950 4700
 Text GLabel 1500 5200 3    50   Input ~ 0
 V_GND
 Wire Wire Line
-	1750 4700 1950 4700
+	1800 4700 1950 4700
 $Comp
 L Amplifier_Operational:OPA2134 U1
 U 3 1 5ED53AF4
@@ -431,9 +439,11 @@ Wire Wire Line
 	5400 5200 5950 5200
 Wire Wire Line
 	5400 5200 5400 6300
-Connection ~ 1750 5100
 Wire Wire Line
-	1500 5100 1750 5100
+	1800 5100 1800 4700
+Connection ~ 1800 5100
+Wire Wire Line
+	1500 5100 1800 5100
 Wire Wire Line
 	1500 5200 1500 5100
 Connection ~ 1500 5100
@@ -442,7 +452,28 @@ Wire Wire Line
 Wire Wire Line
 	1400 4750 1350 4750
 Wire Wire Line
+	1400 3850 1950 3850
+Wire Wire Line
+	1650 4900 1650 5200
+Wire Wire Line
 	1000 1750 1000 2050
+Wire Wire Line
+	1950 5100 1800 5100
+Wire Wire Line
+	1850 4800 1950 4800
+Wire Wire Line
+	1650 4500 1650 4400
+$Comp
+L SamacSys_Parts:R_POT_Dual_Switch RV1
+U 1 1 5EDC5B18
+P 2050 4700
+F 0 "RV1" V 2100 4800 50  0000 R CNN
+F 1 "R_POT_DUAL_SWITCHED" V 2000 5100 50  0000 R CNN
+F 2 "SamacSys_Parts:RK0971221Z05" H 2300 4625 50  0001 C CNN
+F 3 "~" H 2300 4625 50  0001 C CNN
+	1    2050 4700
+	0    1    1    0   
+$EndComp
 Connection ~ 2050 2850
 Wire Wire Line
 	1000 2850 2050 2850
@@ -455,39 +486,8 @@ Text GLabel 1400 1750 1    50   Input ~ 0
 SPST_PIN_7
 Text GLabel 1650 1750 1    50   Input ~ 0
 SPST_PIN_8
-Text GLabel 1650 5200 3    50   Input ~ 0
-SPST_PIN_8
 Text GLabel 1650 4400 1    50   Input ~ 0
 SPST_PIN_7
-Wire Wire Line
-	1400 3850 1950 3850
-Wire Wire Line
-	1750 5100 1750 4700
-Wire Wire Line
-	1650 4900 1650 5200
-Wire Wire Line
-	1650 4500 1650 4400
-Wire Wire Line
-	1950 5100 1750 5100
-Wire Wire Line
-	2150 4950 2550 4950
-Wire Wire Line
-	1850 4800 1950 4800
-Wire Wire Line
-	1950 4600 1950 4700
-Wire Wire Line
-	2150 4450 2550 4450
-Wire Wire Line
-	1950 3850 1950 4300
-$Comp
-L SamacSys_Parts:R_POT_Dual_Switch RV1
-U 1 1 5EDC5B18
-P 2050 4700
-F 0 "RV1" V 2100 4800 50  0000 R CNN
-F 1 "R_POT_DUAL_SWITCHED" V 2000 5100 50  0000 R CNN
-F 2 "SamacSys_Parts:RK0971221Z05" H 2300 4625 50  0001 C CNN
-F 3 "~" H 2300 4625 50  0001 C CNN
-	1    2050 4700
-	0    1    1    0   
-$EndComp
+Text GLabel 1650 5200 3    50   Input ~ 0
+SPST_PIN_8
 $EndSCHEMATC
